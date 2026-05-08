@@ -59,3 +59,39 @@ if (loginForm) {
         }
     });
 }
+// Форма регистрации
+const registerFormPage = document.getElementById('registerFormPage');
+if (registerFormPage) {
+    registerFormPage.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('registerEmail').value;
+        const password = document.getElementById('registerPassword').value;
+        const registerData = {
+            firstName,
+            lastName,
+            email,
+            password
+        };
+        try {
+            // Здесь позже будет запрос на сервер
+            /*
+            const response = await fetch('http://localhost:3000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(registerData)
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.message || 'Ошибка регистрации');
+            }
+            */
+            alert(`Регистрация прошла бы успешно!\nИмя: ${firstName}\nФамилия: ${lastName}\nEmail: ${email}`);
+        } catch (error) {
+            alert('Ошибка при регистрации: ' + error.message);
+        }
+    });
+}
