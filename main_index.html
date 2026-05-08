@@ -1,0 +1,36 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamFinder — Найди команду для проекта</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <span class="logo">TeamFinder</span>
+            <div class="header-center">
+                <button class="nav-btn active">Главная</button>
+                <button class="nav-btn">Участники</button>
+            </div>
+        </div>
+        <div class="header-right">
+            <button class="btn-login">Войти</button>
+            <button class="btn-register" id="openRegisterModal">Регистрация</button>
+        </div>
+    </header>
+    <main>
+        <div class="content-wrapper">
+            <h1 class="main-title">Актуальные проекты</h1>
+            <p class="subtitle">Найдите интересный проект и присоединитесь к команде</p>
+            <div class="empty-projects-block">
+                <div class="empty-icon">📂</div>
+                <p class="empty-title">Пока нет проектов</p>
+                <p class="empty-subtitle">Создавайте проекты и делитесь ими с другими пользователями!</p>
+                <button class="btn-create" onclick="alert('Создание проекта — в разработке 🚧')">＋ Создать проект</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
