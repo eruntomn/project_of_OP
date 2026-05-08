@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamFinder — Вход в систему</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <span class="logo">TeamFinder</span>
+            <div class="header-center">
+                <button class="nav-btn" onclick="window.location.href='index.html'">Главная</button>
+                <button class="nav-btn" onclick="window.location.href='participants.html'">Участники</button>
+            </div>
+        </div>
+        <div class="header-right">
+            <button class="btn-login active">Войти</button>
+            <button class="btn-register" onclick="window.location.href='register.html'">Регистрация</button>
+        </div>
+    </header>
+    <main>
+        <div class="login-card">
+            <h1 class="login-title">Вход в систему</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="loginEmail" name="email" placeholder="Введите email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="Введите пароль" required>
+                </div>
+                <button type="submit" class="submit-btn">Войти</button>
+            </form>
+            <p class="register-text">
+                Нет аккаунта? <a href="register.html">Зарегистрироваться</a>
+            </p>
+        </div>
+    </main>
+</body>
+</html>
