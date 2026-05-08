@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #2d3436;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 0 40px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-shrink: 0;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex: 1;
+}
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #6c5ce7;
+    white-space: nowrap;
+}
+.header-center {
+    display: flex;
+    gap: 10px;
+}
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #636e72;
+    cursor: pointer;
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+.nav-btn:hover {
+    background-color: #f0edff;
+    color: #6c5ce7;
+}
+.nav-btn.active {
+    color: #6c5ce7;
+    background-color: #f0edff;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+.btn-login {
+    background: none;
+    border: 1.5px solid #6c5ce7;
+    color: #6c5ce7;
+    padding: 8px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+.btn-login:hover {
+    background-color: #f0edff;
+    transform: translateY(-1px);
+}
+.btn-register {
+    background-color: #6c5ce7;
+    border: 1.5px solid #6c5ce7;
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+.btn-register:hover {
+    background-color: #5b4cdb;
+    border-color: #5b4cdb;
+    transform: translateY(-1px);
+}
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+}
+.content-wrapper {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+.main-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #2d3436;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+.subtitle {
+    font-size: 18px;
+    color: #636e72;
+    margin-bottom: 48px;
+    line-height: 1.5;
+}
+.empty-projects-block {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 60px 40px 50px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 2px dashed #dfe6e9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.empty-icon {
+    font-size: 56px;
+    margin-bottom: 8px;
+}
+.empty-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d3436;
+}
+.empty-subtitle {
+    font-size: 15px;
+    color: #636e72;
+    line-height: 1.5;
+    max-width: 400px;
+}
+.btn-create {
+    background-color: #6c5ce7;
+    border: none;
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 700;
+    transition: all 0.25s ease;
+    margin-top: 12px;
+    box-shadow: 0 4px 14px rgba(108, 92, 231, 0.35);
+}
+.btn-create:hover {
+    background-color: #5b4cdb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.45);
+}
+/* Модальное окно */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+}
+.modal-overlay.active {
+    display: flex;
+}
+.modal {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: modalIn 0.3s ease;
+}
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #636e72;
+    transition: color 0.2s;
+}
+.modal-close:hover {
+    color: #2d3436;
+}
+.modal h2 {
+    margin-bottom: 24px;
+    font-size: 24px;
+    color: #2d3436;
+}
+.form-group {
+    margin-bottom: 16px;
+    text-align: left;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #2d3436;
+    font-size: 14px;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #dfe6e9;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: border-color 0.2s;
+    outline: none;
+}
+.form-group input:focus {
+    border-color: #6c5ce7;
+}
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+.btn-submit:hover {
+    background-color: #5b4cdb;
+    transform: translateY(-1px);
+}
+/* Адаптивность */
+@media (max-width: 700px) {
+    header {
+        padding: 0 16px;
+        flex-wrap: wrap;
+        height: auto;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        gap: 10px;
+    }
+    .header-left {
+        order: 1;
+        flex: 1 1 100%;
+        justify-content: center;
+        gap: 20px;
+    }
+    .header-right {
+        order: 2;
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+    .logo {
+        display: none;
+    }
+    .main-title {
+        font-size: 30px;
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+    .empty-projects-block {
+        padding: 40px 20px 35px 20px;
+    }
+}
